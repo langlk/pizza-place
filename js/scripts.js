@@ -24,6 +24,14 @@ function Order(name) {
   this.pizzas = [];
 }
 
+Order.prototype.cost = function() {
+  var totalCost = 0;
+  this.pizzas.forEach(function(pizza) {
+    totalCost += pizza.cost();
+  });
+  return totalCost;
+}
+
 // UI Logic
 $(document).ready(function() {
   $("#add").click(function() {
@@ -42,22 +50,26 @@ $(document).ready(function() {
     var name = $("#name").val();
     var newOrder = new Order(name);
 
-    var size = $("[name=size]").val();
-    var toppings = [];
-    $("input:checkbox[name=topping]:checked").each(function() {
-      toppings.push(this.value);
+    $(".pizza-order").each(function() {
+      var size = $(this).find("[name=size]").val();
+      var toppings = [];
+      $(this).find("input:checkbox[name=topping]:checked").each(function() {
+        toppings.push(this.value);
+      });
+      var pizzaOrder = new Pizza(size, toppings);
+      newOrder.pizzas.push(pizzaOrder);
     });
-    var pizzaOrder = new Pizza(size, toppings);
-    newOrder.pizzas.push(pizzaOrder);
-    console.log(newOrder);
+
     $("#order").hide();
     $(".order-confirm").show();
-    $(".size").text(pizzaOrder.size);
-    $(".toppings").empty();
-    pizzaOrder.toppings.forEach(function(topping) {
-      $(".toppings").append("<li>" + topping + "</li>");
-    });
-    $(".cost").text("$" + pizzaOrder.cost().toFixed(2));
+    $(".name").text(newOrder.name);
+    // $(".size").text(pizzaOrder.size);
+    // $(".toppings").empty();
+    // pizzaOrder.toppings.forEach(function(topping) {
+    //   $(".toppings").append("<li>" + topping + "</li>");
+    // });
+    // $(".cost").text("$" + pizzaOrder.cost().toFixed(2));
+    $(".total").text("$" + newOrder.cost().toFixed(2));
   });
 
   $("#edit").click(function() {
