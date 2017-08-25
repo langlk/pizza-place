@@ -6,7 +6,7 @@
 
 ## Description
 
-_A webpage for a theoretical pizza parlor, that allows users to order pizzas using a form, as well as edit and confirm their order._
+_A webpage for a theoretical pizza parlor, "The Pizzararium", that allows users to order pizzas using a form, as well as edit and confirm their order._
 
 ## Setup/Installation Requirements
 
