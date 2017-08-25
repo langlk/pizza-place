@@ -5,8 +5,18 @@ function Pizza(size, toppings) {
 }
 
 Pizza.prototype.cost = function() {
-  sizeCosts = {"Small": 7, "Medium": 10, "Large": 15};
-  return sizeCosts[this.size];
+  var sizeCosts = {"Small": 7, "Medium": 10, "Large": 15};
+  var totalCost = sizeCosts[this.size];
+  var totalToppings = this.toppings.length;
+  if (totalToppings > 3) {
+    totalCost += totalToppings - 3;
+    totalToppings -= (totalToppings - 3);
+  }
+  if (totalToppings > 1) {
+    totalCost += (totalToppings - 1) * .5;
+    totalToppings -= 2;
+  }
+  return totalCost;
 }
 
 // UI Logic
