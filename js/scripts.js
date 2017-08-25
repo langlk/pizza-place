@@ -173,8 +173,6 @@ $(document).ready(function() {
   });
 
   $(".price-guide").click(function() {
-    if($(window).width() <= 768) {
-      $(".price-list").slideToggle();
-    }
+    $(".price-list").slideToggle();    
   });
 });

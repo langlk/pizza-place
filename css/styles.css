@@ -56,6 +56,11 @@ body {
   color: rgb(102, 50, 23);
 }
 
+.price-guide:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
 .contents {
   padding: 0px 20px;
 }
@@ -109,10 +114,5 @@ img.confirmation {
 @media screen and (max-width: 768px) {
   .price-list {
     display: none;
-  }
-
-  .price-guide:hover {
-    cursor: pointer;
-    opacity: .7;
   }
 }
