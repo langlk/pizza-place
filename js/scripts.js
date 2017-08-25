@@ -21,21 +21,26 @@ Pizza.prototype.cost = function() {
 
 // UI Logic
 $(document).ready(function() {
-  $("form#order").submit(function(event) {
+  $("#order").submit(function(event) {
     event.preventDefault();
-    var size = $("select#size").val();
+    var size = $("#size").val();
     var toppings = [];
     $("input:checkbox[name=topping]:checked").each(function() {
       toppings.push(this.value);
     });
     var pizzaOrder = new Pizza(size, toppings);
 
-    $("form#order").hide();
+    $("#order").hide();
     $(".order-confirm").show();
     $(".size").text(pizzaOrder.size);
     toppings.forEach(function(topping) {
       $(".toppings").append("<li>" + topping + "</li>");
     });
     $(".cost").text("$" + pizzaOrder.cost().toFixed(2));
+  });
+
+  $("#confirm").click(function() {
+    $(".order-confirm").hide();
+    $(".confirmation").show();
   });
 });

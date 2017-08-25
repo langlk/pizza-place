@@ -1,3 +1,11 @@
 .order-confirm {
   display: none;
 }
+
+.confirmation {
+  display: none;
+}
+
+.confirmation img {
+  max-width: 100%;
+}
