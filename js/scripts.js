@@ -24,8 +24,10 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     var size = $("select#size").val();
-    var toppings = $("input#toppings").val().split(",");
-
+    var toppings = $("input:checkbox[name=topping]:checked").map(function() {
+      return this.value;
+    });
+    console.log(toppings);
     var pizzaOrder = new Pizza(size, toppings);
     console.log(pizzaOrder.cost());
   });
