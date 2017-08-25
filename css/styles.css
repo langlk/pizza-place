@@ -1,3 +1,35 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("bg.jpeg");
+  background-size: auto 100vh;
+  color: rgb(61, 21, 0);
+}
+
+.container {
+  background-color: rgba(232, 202, 187, .8);
+  height: 100vh;
+}
+
+.btn {
+  background-color: rgb(163, 55, 1);
+  color: rgb(234, 203, 187);
+}
+
+.btn:hover {
+  color: rgb(61, 21, 0);
+  background-color: rgba(163, 55, 1, .6);
+}
+
+.jumbotron {
+  font-family: 'Autour One', cursive;
+  background-color: rgb(163, 55, 1);
+  color: rgb(234, 203, 187);
+}
+
+.intro {
+  font-style: italic;
+}
+
 .order-confirm {
   display: none;
 }
