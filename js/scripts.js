@@ -4,6 +4,11 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
+Pizza.prototype.cost = function() {
+  sizeCosts = {"Small": 7, "Medium": 10, "Large": 15};
+  return sizeCosts[this.size];
+}
+
 // UI Logic
 $(document).ready(function() {
   $("form#order").submit(function(event) {
@@ -12,9 +17,6 @@ $(document).ready(function() {
     var toppings = $("input#toppings").val().split(",");
 
     var pizzaOrder = new Pizza(size, toppings);
-    $(".order-confirm").append("<p class='pizza-order'>"+size+" Pizza</p>");
-    $(".pizza-order").last().click(function() {
-      console.log(pizzaOrder);
-    });
+    console.log(pizzaOrder.cost());
   });
 });
