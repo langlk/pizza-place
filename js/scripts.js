@@ -24,6 +24,10 @@ function Order(name) {
   this.pizzas = [];
 }
 
+Order.prototype.totalPizzas = function() {
+  return this.pizzas.length;
+}
+
 Order.prototype.cost = function() {
   var totalCost = 0;
   this.pizzas.forEach(function(pizza) {
@@ -61,24 +65,37 @@ $(document).ready(function() {
     });
 
     $("#order").hide();
-    $(".order-confirm").show();
+    $(".additional-pizzas").empty();
     $(".name").text(newOrder.name);
-    // $(".size").text(pizzaOrder.size);
-    // $(".toppings").empty();
-    // pizzaOrder.toppings.forEach(function(topping) {
-    //   $(".toppings").append("<li>" + topping + "</li>");
-    // });
-    // $(".cost").text("$" + pizzaOrder.cost().toFixed(2));
+    for (var i = 2; i <= newOrder.totalPizzas(); i++) {
+      var firstOrder = document.getElementById("pizza-details-1");
+      var nextOrder = firstOrder.cloneNode(true);
+      nextOrder.id = "";
+      nextOrder.className += " pizza-details-" + i;
+      $(".additional-pizzas").append(nextOrder);
+    }
+    for (var i = 1; i <= newOrder.totalPizzas(); i++) {
+      var pizza = newOrder.pizzas[i-1];
+      $(".pizza-details-" + i + " .size").text(pizza.size);
+      pizza.toppings.forEach(function(topping) {
+        $(".pizza-details-" + i + " .toppings").append("<li>" + topping + "</li>");
+      });
+      $(".pizza-details-" + i + " .cost").text("$" + pizza.cost().toFixed(2));
+    }
     $(".total").text("$" + newOrder.cost().toFixed(2));
+    $(".order-details").fadeIn();
   });
 
   $("#edit").click(function() {
-    $("#order").show();
-    $(".order-confirm").hide();
+    $(".order-details").hide();
+    $("#order").fadeIn();
   });
 
   $("#confirm").click(function() {
     $(".order-confirm").hide();
     $(".confirmation").show();
+    $(".order-details").hide();
+    $(".order-contents").addClass("col-sm-5");
+    $(".order-details").fadeIn();
   });
 });

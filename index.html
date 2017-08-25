@@ -103,35 +103,34 @@
             <button type="submit" class="btn">Continue</button>
           </form>
 
-          <div class="order-confirm">
-            <h2><span class="name"></span>'s Order</h2>
-            <div class="order-contents">
-              <div class="pizza-details">
-                <h3><strong><span class="size"></span> Pizza</strong></h3>
-                <h4>Toppings:</h4>
-                <ul class="toppings">
+          <div class="order-details">
+            <h2 class="order-confirm"><span class="name"></span>'s Order</h2>
 
-                </ul>
-                <h4>Cost: <span class="cost"></span></h4>
+            <h2 class="confirmation">Order Confirmed!</h2>
+
+            <div class="row">
+              <div class="order-contents">
+                <div id="pizza-details-1" class="pizza-details pizza-details-1">
+                  <h3><span class="size"></span> Pizza</h3>
+                  <h4>Toppings:</h4>
+                  <ul class="toppings">
+
+                  </ul>
+                  <h4>Cost: <span class="cost"></span></h4>
+                </div>
+
+                <div class="additional-pizzas"></div>
+
+                <h3>Order Total: <span class="total"></span></h4>
+                <div class="order-confirm">
+                  <button type="button" class="btn" id="edit">Edit Order</button>
+                  <button type="button" class="btn" id="confirm">Confirm Order</button>
+                </div>
               </div>
-              <h3>Order Total: <span class="total"></span></h4>
-              <button type="button" class="btn" id="edit">Edit Order</button>
-              <button type="button" class="btn" id="confirm">Confirm Order</button>
-            </div>
-          </div>
+              <div class="confirmation col-sm-7">
+                <img class="confirmation" src="img/pizza.jpg" alt="A photo of a delicious pizza.">
+              </div>
 
-          <div class="confirmation row">
-            <h2>Order Confirmed!</h2>
-            <div class="col-sm-4">
-              <h3><strong><span class="size"></span> Pizza</strong></h3>
-              <h4>Toppings:</h4>
-              <ul class="toppings">
-
-              </ul>
-              <h4>Cost: <span class="cost"></span></h4>
-            </div>
-            <div class="col-sm-8">
-              <img src="img/pizza.jpg" alt="A photo of a delicious pizza">
             </div>
           </div>
         </div>
