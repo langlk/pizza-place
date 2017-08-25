@@ -177,12 +177,4 @@ $(document).ready(function() {
       $(".price-list").slideToggle();
     }
   });
-
-  $(window).resize(function() {
-    if ($(window).width() > 768) {
-      $(".price-list").show();
-    } else {
-      $(".price-list").slideUp();
-    }
-  });
 });
