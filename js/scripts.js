@@ -172,7 +172,8 @@ $(document).ready(function() {
     $(".order-details").fadeIn();
   });
 
+  // Price Guide show/hide
   $(".price-guide").click(function() {
-    $(".price-list").slideToggle();    
+    $(".price-list").slideToggle();
   });
 });
