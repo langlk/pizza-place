@@ -19,22 +19,42 @@ Pizza.prototype.cost = function() {
   return totalCost;
 }
 
+function Order(name) {
+  this.name = name;
+  this.pizzas = [];
+}
+
 // UI Logic
 $(document).ready(function() {
+  $("#add").click(function() {
+    var firstOrder = document.getElementById("first-pizza-order");
+    var nextOrder = firstOrder.cloneNode(true);
+    nextOrder.id = "";
+    $("#add").before(nextOrder);
+    $('#size:last-of-type').prop('selectedIndex',0);
+    $(".pizza-order:last-of-type input[type=checkbox]").each(function() {
+      this.checked= false;
+    });
+  });
+
   $("#order").submit(function(event) {
     event.preventDefault();
-    var size = $("#size").val();
+    var name = $("#name").val();
+    var newOrder = new Order(name);
+
+    var size = $("[name=size]").val();
     var toppings = [];
     $("input:checkbox[name=topping]:checked").each(function() {
       toppings.push(this.value);
     });
     var pizzaOrder = new Pizza(size, toppings);
-
+    newOrder.pizzas.push(pizzaOrder);
+    console.log(newOrder);
     $("#order").hide();
     $(".order-confirm").show();
     $(".size").text(pizzaOrder.size);
     $(".toppings").empty();
-    toppings.forEach(function(topping) {
+    pizzaOrder.toppings.forEach(function(topping) {
       $(".toppings").append("<li>" + topping + "</li>");
     });
     $(".cost").text("$" + pizzaOrder.cost().toFixed(2));

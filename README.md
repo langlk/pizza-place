@@ -37,6 +37,18 @@ _To install on your own computer, follow the steps below:_
     * Example Input: Size="Medium", Toppings=["Cheese", "Sausage", "Pepperoni", "Mushrooms", "Olives"]
     * Example Output: "Cost: $13"
 
+* Program does the above for multiple Pizzas
+  * Example Input:
+    * Pizza 1: Size="Large", Toppings=["Cheese", "Pepperoni"];
+    * Pizza 2: Size="Medium", Toppings=["Cheese", "Mushrooms"]
+  * Example Output: "Pizza 1 Cost: $15.50, Pizza 2 Cost: $10.50"
+
+* Program returns the total cost of an order.
+  * Example Input:
+    * Pizza 1: Size="Large", Toppings=["Cheese", "Pepperoni"];
+    * Pizza 2: Size="Medium", Toppings=["Cheese", "Mushrooms"]
+  * Example Output: "Order Total: $26.00"
+
 ## Support and contact details
 
 _Please contact [kels.langlois@gmail.com](mailto:kels.langlois@gmail.com) with questions, comments, or issues._

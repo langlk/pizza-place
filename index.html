@@ -42,7 +42,7 @@
                 <strong>First Two Additional Toppings:</strong> $0.50 each
               </li>
               <li>
-                <strong>Additional Toppings after First Two:</strong> $1.00 each
+                <strong>Further Additional Toppings:</strong> $1.00 each
               </li>
             </ul>
           </div>
@@ -52,47 +52,54 @@
           <form id="order">
             <h2>Place an Order</h2>
             <div class="form-group">
-              <label for="size">Size:</label>
-              <select class="form-control" id="size">
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
-              </select>
+              <label for="name">Name:</label>
+              <input type="text" id="name" class="form-control">
             </div>
+            <div id="first-pizza-order" class="pizza-order">
+              <div class="form-group">
+                <label for="size">Size:</label>
+                <select class="form-control" name="size">
+                  <option>Small</option>
+                  <option>Medium</option>
+                  <option>Large</option>
+                </select>
+              </div>
 
-            <div class="row">
-              <div class="form-group col-sm-4">
-                <h4>Cheeses:</h4>
-                <input type="checkbox" name="topping" value="Mozzerella"> Mozerella<br>
-                <input type="checkbox" name="topping" value="Asiago"> Asiago<br>
-                <input type="checkbox" name="topping" value="Parmesan"> Parmesan<br>
-                <input type="checkbox" name="topping" value="Gorgonzola"> Gorgonzola<br>
-                <input type="checkbox" name="topping" value="Chevre"> Chevre<br>
-                <input type="checkbox" name="topping" value="Feta"> Feta<br>
-                <input type="checkbox" name="topping" value="Ricotta"> Ricotta<br>
-              </div>
-              <div class="form-group col-sm-4">
-                <h4>Vegetarian Toppings:</h4>
-                <input type="checkbox" name="topping" value="Olives"> Olives<br>
-                <input type="checkbox" name="topping" value="Pineapple"> Pineapple<br>
-                <input type="checkbox" name="topping" value="Red Peppers"> Red Peppers<br>
-                <input type="checkbox" name="topping" value="Onions"> Onions<br>
-                <input type="checkbox" name="topping" value="Jalapenos"> Jalapenos<br>
-                <input type="checkbox" name="topping" value="Pepperocini"> Pepperocini<br>
-                <input type="checkbox" name="topping" value="Arugula"> Arugula<br>
-                <input type="checkbox" name="topping" value="Spinach"> Spinach<br>
-                <input type="checkbox" name="topping" value="Artichokes"> Artichokes<br>
-                <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms<br>
-              </div>
-              <div class="form-group col-sm-4">
-                <h4>Carnivorous Toppings</h4>
-                <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni<br>
-                <input type="checkbox" name="topping" value="Sausage"> Sausage<br>
-                <input type="checkbox" name="topping" value="Chicken"> Chicken<br>
-                <input type="checkbox" name="topping" value="Canadian Bacon"> Canadian Bacon<br>
-                <input type="checkbox" name="topping" value="Bacon"> Bacon<br>
+              <div class="row">
+                <div class="form-group col-sm-4">
+                  <h4>Cheeses:</h4>
+                  <input type="checkbox" name="topping" value="Mozzerella"> Mozerella<br>
+                  <input type="checkbox" name="topping" value="Asiago"> Asiago<br>
+                  <input type="checkbox" name="topping" value="Parmesan"> Parmesan<br>
+                  <input type="checkbox" name="topping" value="Gorgonzola"> Gorgonzola<br>
+                  <input type="checkbox" name="topping" value="Chevre"> Chevre<br>
+                  <input type="checkbox" name="topping" value="Feta"> Feta<br>
+                  <input type="checkbox" name="topping" value="Ricotta"> Ricotta<br>
+                </div>
+                <div class="form-group col-sm-4">
+                  <h4>Vegetarian Toppings:</h4>
+                  <input type="checkbox" name="topping" value="Olives"> Olives<br>
+                  <input type="checkbox" name="topping" value="Pineapple"> Pineapple<br>
+                  <input type="checkbox" name="topping" value="Red Peppers"> Red Peppers<br>
+                  <input type="checkbox" name="topping" value="Onions"> Onions<br>
+                  <input type="checkbox" name="topping" value="Jalapenos"> Jalapenos<br>
+                  <input type="checkbox" name="topping" value="Pepperocini"> Pepperocini<br>
+                  <input type="checkbox" name="topping" value="Arugula"> Arugula<br>
+                  <input type="checkbox" name="topping" value="Spinach"> Spinach<br>
+                  <input type="checkbox" name="topping" value="Artichokes"> Artichokes<br>
+                  <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms<br>
+                </div>
+                <div class="form-group col-sm-4">
+                  <h4>Carnivorous Toppings</h4>
+                  <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni<br>
+                  <input type="checkbox" name="topping" value="Sausage"> Sausage<br>
+                  <input type="checkbox" name="topping" value="Chicken"> Chicken<br>
+                  <input type="checkbox" name="topping" value="Canadian Bacon"> Canadian Bacon<br>
+                  <input type="checkbox" name="topping" value="Bacon"> Bacon<br>
+                </div>
               </div>
             </div>
+            <button type="button" class="btn" id="add">Add a Pizza</button>
             <button type="submit" class="btn">Continue</button>
           </form>
 
