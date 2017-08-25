@@ -171,4 +171,18 @@ $(document).ready(function() {
     $(".order-contents").addClass("col-sm-5");
     $(".order-details").fadeIn();
   });
+
+  $(".price-guide").click(function() {
+    if($(window).width() <= 768) {
+      $(".price-list").slideToggle();
+    }
+  });
+
+  $(window).resize(function() {
+    if ($(window).width() > 768) {
+      $(".price-list").show();
+    } else {
+      $(".price-list").slideUp();
+    }
+  });
 });

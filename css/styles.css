@@ -105,3 +105,14 @@ img.confirmation {
   border-radius: 3px;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .price-list {
+    display: none;
+  }
+
+  .price-guide:hover {
+    cursor: pointer;
+    opacity: .7;
+  }
+}
