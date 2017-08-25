@@ -19,6 +19,10 @@ Pizza.prototype.cost = function() {
   return totalCost;
 }
 
+Pizza.prototype.toppingNumber = function() {
+  return this.toppings.length;
+}
+
 function Order(name) {
   this.name = name;
   this.pizzas = [];
@@ -74,18 +78,20 @@ $(document).ready(function() {
     });
 
     $("#order").hide();
+    $(".toppings").empty();
     $(".additional-pizzas").empty();
     $(".name").text(newOrder.name);
     for (var i = 2; i <= newOrder.totalPizzas(); i++) {
       var firstOrder = document.getElementById("pizza-details-1");
       var nextOrder = firstOrder.cloneNode(true);
       nextOrder.id = "";
-      nextOrder.className += " pizza-details-" + i;
+      nextOrder.className = "pizza-details-" + i;
       $(".additional-pizzas").append(nextOrder);
     }
     for (var i = 1; i <= newOrder.totalPizzas(); i++) {
       var pizza = newOrder.pizzas[i-1];
       $(".pizza-details-" + i + " .size").text(pizza.size);
+      $(".pizza-details-" + i + " .topping-number").text(pizza.toppingNumber() + "-Topping");
       pizza.toppings.forEach(function(topping) {
         $(".pizza-details-" + i + " .toppings").append("<li>" + topping + "</li>");
       });
