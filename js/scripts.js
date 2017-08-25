@@ -33,10 +33,16 @@ $(document).ready(function() {
     $("#order").hide();
     $(".order-confirm").show();
     $(".size").text(pizzaOrder.size);
+    $(".toppings").empty();
     toppings.forEach(function(topping) {
       $(".toppings").append("<li>" + topping + "</li>");
     });
     $(".cost").text("$" + pizzaOrder.cost().toFixed(2));
+  });
+
+  $("#edit").click(function() {
+    $("#order").show();
+    $(".order-confirm").hide();
   });
 
   $("#confirm").click(function() {
