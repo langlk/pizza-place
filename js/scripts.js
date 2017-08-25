@@ -42,10 +42,19 @@ $(document).ready(function() {
     var firstOrder = document.getElementById("first-pizza-order");
     var nextOrder = firstOrder.cloneNode(true);
     nextOrder.id = "";
+    nextOrder.className += " initially-hidden";
     $("#add").before(nextOrder);
+    $(".pizza-order:last-of-type").append("<div class='remove'>Remove This Pizza</div>");
     $('#size:last-of-type').prop('selectedIndex',0);
     $(".pizza-order:last-of-type input[type=checkbox]").each(function() {
       this.checked= false;
+    });
+    $(".initially-hidden:last-of-type").slideDown();
+    $(".remove").last().click(function() {
+      $(this).parent().slideUp();
+      setTimeout(function() {
+        nextOrder.remove();
+      },700);
     });
   });
 

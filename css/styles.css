@@ -5,6 +5,7 @@ body {
   background-image: url("bg.jpeg");
   background-size: 100vw auto;
   background-position: right;
+  background-attachment: fixed;
   color: rgb(61, 21, 0);
 }
 
@@ -71,6 +72,21 @@ body {
 label {
   font-size: 18px;
   font-weight: 500;
+}
+
+.initially-hidden {
+  display: none;
+}
+
+.remove {
+  display: inline-block;
+  color: rgb(135, 98, 78);
+  margin-bottom: 20px;
+}
+
+.remove:hover {
+  color: rgb(163, 55, 1);
+  cursor: pointer;
 }
 
 .order-details {
