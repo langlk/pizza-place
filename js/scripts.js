@@ -24,11 +24,18 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     var size = $("select#size").val();
-    var toppings = $("input:checkbox[name=topping]:checked").map(function() {
-      return this.value;
+    var toppings = [];
+    $("input:checkbox[name=topping]:checked").each(function() {
+      toppings.push(this.value);
     });
-    console.log(toppings);
     var pizzaOrder = new Pizza(size, toppings);
-    console.log(pizzaOrder.cost());
+
+    $("form#order").hide();
+    $(".order-confirm").show();
+    $(".size").text(pizzaOrder.size);
+    toppings.forEach(function(topping) {
+      $(".toppings").append("<li>" + topping + "</li>");
+    });
+    $(".cost").text("$" + pizzaOrder.cost().toFixed(2));
   });
 });
