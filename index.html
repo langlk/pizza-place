@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Autour+One|Poppins" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
@@ -14,6 +15,7 @@
         <h1>The Pizzararium</h1>
         <p>The best virtual pizzas in Seattle since 2017!</p>
       </div>
+
       <div class="row">
         <div class="sidebar col-sm-3">
           <div class="intro">
@@ -55,6 +57,7 @@
               <label for="name">Name:</label>
               <input type="text" id="name" class="form-control">
             </div>
+
             <div id="first-pizza-order" class="pizza-order">
               <div class="form-group">
                 <label for="size">Size:</label>
@@ -68,7 +71,7 @@
               <div class="row">
                 <div class="form-group col-sm-4">
                   <h4>Cheeses:</h4>
-                  <input type="checkbox" name="topping" value="Mozzerella"> Mozerella<br>
+                  <input type="checkbox" name="topping" value="Mozzerella"> Mozzerella<br>
                   <input type="checkbox" name="topping" value="Asiago"> Asiago<br>
                   <input type="checkbox" name="topping" value="Parmesan"> Parmesan<br>
                   <input type="checkbox" name="topping" value="Gorgonzola"> Gorgonzola<br>
@@ -99,6 +102,7 @@
                 </div>
               </div>
             </div>
+
             <button type="button" class="btn" id="add">Add a Pizza</button>
             <button type="submit" class="btn">Continue</button>
           </form>
@@ -114,7 +118,7 @@
                   <h3>
                     <span class="size"></span> <span class="topping-number"></span> Pizza
                   </h3>
-                  <h4>Toppings:</h4>
+                  <h4 class="has-toppings">Toppings:</h4>
                   <ul class="toppings">
 
                   </ul>
@@ -124,15 +128,16 @@
                 <div class="additional-pizzas"></div>
 
                 <h3>Order Total: <span class="total"></span></h4>
+
                 <div class="order-confirm">
                   <button type="button" class="btn" id="edit">Edit Order</button>
                   <button type="button" class="btn" id="confirm">Confirm Order</button>
                 </div>
               </div>
+
               <div class="confirmation col-sm-7">
                 <img class="confirmation" src="img/pizza.jpg" alt="A photo of a delicious pizza.">
               </div>
-
             </div>
           </div>
         </div>

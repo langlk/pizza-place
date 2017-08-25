@@ -6,11 +6,11 @@
 
 ## Description
 
-_A webpage for a theoretical pizza parlor, that allows users to order a pizza using a form, as well as edit and confirm the order._
+_A webpage for a theoretical pizza parlor, that allows users to order pizzas using a form, as well as edit and confirm their order._
 
 ## Setup/Installation Requirements
 
-_To install on your own computer, follow the steps below:_
+_You can view this project on GitHub pages at [langlk.github.io/pizza-place](https://langlk.github.io/pizza-place/). To install on your own computer, follow the steps below:_
 
 * Clone this repository
 * Open index.html in web browser of your choice
